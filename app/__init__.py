@@ -31,4 +31,7 @@ def create_app(config_name):
     from .home import home as home_blueprint
     app.register_blueprint(home_blueprint)
 
+    from .players import players as players_blueprint
+    app.register_blueprint(players_blueprint)
+
     return app
