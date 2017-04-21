@@ -16,8 +16,7 @@ class Player(db.Model):
     # as is the name of the model
     __tablename__ = 'players'
 
-    id = db.Column(db.Integer, primary_key=True)
-    player_name = db.Column(db.String(60), index=True)
+    player_name = db.Column(db.String(60), index=True, primary_key=True)
     player_yob = db.Column(db.String(60), index=True)
     grade_1 = db.Column(db.String(60), index=True, nullable=True)
     grade_a = db.Column(db.String(60), index=True, nullable=True)
@@ -31,4 +30,4 @@ class Player(db.Model):
 
 
     def __repr__(self):
-        return '<Player: {}>'.format(self.first_name)
+        return '<Player: {}>'.format(self.player_name)

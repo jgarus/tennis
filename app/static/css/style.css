@@ -1,5 +1,6 @@
 /* app/static/css/style.css */
 
+
 body, html {
     width: 100%;
     height: 100%;
@@ -26,6 +27,8 @@ footer {
 p.copyright {
     margin: 15px 0 0;
 }
+
+
 
 .alert-info {
     width: 50%;
@@ -106,4 +109,12 @@ p.copyright {
   height: auto !important;
   height: 100%;
   margin: 0 auto -4em;
+}
+
+/* Sortable tables */
+table.sortable thead {
+    background-color:#eee;
+    color:#666666;
+    font-weight: bold;
+    cursor: default;
 }
