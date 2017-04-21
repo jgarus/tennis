@@ -12,23 +12,17 @@ body, h1, h2, h3 {
 }
 
 a, .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {
-  color: #aec251;
+  color: #8B0000;
 }
 
 a:hover, .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {
-  color: #687430;
+  color: #6C2F10;
 }
 
 footer {
-    padding: 50px 0;
+    padding: 1px 0;
     background-color: #f8f8f8;
 }
-
-p.copyright {
-    margin: 15px 0 0;
-}
-
-
 
 .alert-info {
     width: 50%;
@@ -60,7 +54,7 @@ p.copyright {
 
 .footer, .push {
   clear: both;
-  height: 4em;
+  height: 2em;
 }
 
 .intro-divider {

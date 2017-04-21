@@ -1,3 +1,4 @@
+{% from "bootstrap/pagination.html" import render_pagination %}
 {% import "bootstrap/utils.html" as utils %}
 {% extends "base.html" %}
 {% block title %}Players{% endblock %}
@@ -12,24 +13,42 @@
          <h1 style="text-align:center;">Players</h1>
          <hr class="intro-divider">
          <div class="center">
-            <table class="sortable table table-striped table-bordered">
+
+
+           <div class=pagination>
+             {% for page in players.iter_pages() %}
+             {% if page %}
+             {% if page != players.page %}
+             <a href="{{ url_for("players.playerspage", page=page) }}">{{ page }}</a>
+             {% else %}
+             <strong>{{ page }}</strong>
+             {% endif %}
+             {% else %}
+             <span class=ellipsis>…</span>
+             {% endif %}
+             {% endfor %}
+            </div>
+
+
+           <table class="sortable table table-striped table-bordered">
                <thead>
                   <tr>
-                     <th width="15%"> Player Name </th>
-                     <th width="15%"> Player DoB </th>
-                     <th width="15%"> Grade 1 </th>
-                     <th width="15%"> Grade a </th>
-                     <th width="15%"> Grade 2 </th>
-                     <th width="15%"> Grade b </th>
-                     <th width="15%"> Grade 3 </th>
-                     <th width="15%"> Grade c </th>
-                     <th width="15%"> Grade 4 </th>
-                     <th width="15%"> Grade 5 </th>
-                     <th width="15%"> Grade 6 </th>
+                     <th width="50%"> Player Name </th>
+                     <th width="50%"> Player DoB </th>
+                     <th width="50%"> Grade 1 </th>
+                     <th width="50%"> Grade a </th>
+                     <th width="50%"> Grade 2 </th>
+                     <th width="50%"> Grade b </th>
+                     <th width="50%"> Grade 3 </th>
+                     <th width="50%"> Grade c </th>
+                     <th width="50%"> Grade 4 </th>
+                     <th width="50%"> Grade 5 </th>
+                     <th width="50%"> Grade 6 </th>
                   </tr>
                </thead>
                <tbody>
-                  {%for player in players%}
+
+                  {%for player in players.items%}
                   <tr>
                      <td>{{ player.player_name}} </td>
                      <td>{{ player.player_yob}} </td>
